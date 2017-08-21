@@ -1,12 +1,3 @@
-import _ from 'lodash';
+import component from './components/table_with_random_numbers';
 
-function component() {
-  var element = document.createElement('div');
-
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
-  return element;
-}
-
-document.body.appendChild(component());
+document.body.appendChild(component(3));

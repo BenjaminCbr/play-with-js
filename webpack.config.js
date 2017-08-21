@@ -1,14 +1,25 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const PATHS = {
+  app: path.join(__dirname, 'src'),
+  build: path.join(__dirname, 'dist'),
+};
 
 module.exports = {
-  entry: './src/index.js',
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+  // Entries have to resolve to files! They rely on Node
+  // convention by default so if a directory contains *index.js*,
+  // it resolves to that.
+  entry: {
+    app: PATHS.app,
   },
-  entry: './src/module_without_deps.js',
   output: {
-    filename: 'no_deps.js',
-    path: path.resolve(__dirname, 'dist')
-  }
+    path: PATHS.build,
+    filename: '[name].js',
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Webpack demo',
+    }),
+  ],
 };
