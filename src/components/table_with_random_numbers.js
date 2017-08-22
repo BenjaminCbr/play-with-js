@@ -1,7 +1,9 @@
 import _ from 'lodash';
 
 export default (size = 3) => {
-  const element = document.createElement('table');
+  const element = document.createElement('div');
+
+  const table = document.createElement('table');
 
   for (var i = 0; i < size; i++) {
     var row = document.createElement('tr')
@@ -11,8 +13,10 @@ export default (size = 3) => {
       cell.innerHTML = _.random(1, 9).toString();
       row.appendChild(cell);
     }
-    element.appendChild(row);
+    table.appendChild(row);
   }
+
+  element.appendChild(table);
 
   return element;
 };
