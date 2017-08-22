@@ -1,1 +1,1 @@
-console.log("Hello World without dependencies");
+console.log('Hello World without dependencies');

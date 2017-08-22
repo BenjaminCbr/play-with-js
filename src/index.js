@@ -1,3 +1,3 @@
 import component from './components/table_with_random_numbers';
 
-document.body.appendChild(component(3));
+document.body.appendChild(component(5));

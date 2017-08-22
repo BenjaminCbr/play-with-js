@@ -4,7 +4,9 @@
   "description": "Discover the joys of Javascript coding",
   "main": "test.js",
   "scripts": {
-    "build": "webpack"
+    "start": "webpack-dev-server --env development",
+    "build": "webpack --env.target production",
+    "lint:js": "eslint src/ webpack.*.js --cache"
   },
   "keywords": [
     "test",
@@ -19,5 +21,12 @@
     "lodash": "^4.17.4",
     "style-loader": "^0.18.2",
     "webpack": "^3.5.5"
+  },
+  "devDependencies": {
+    "eslint": "^4.5.0",
+    "eslint-config-airbnb-base": "^11.3.1",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "webpack-dev-server": "^2.7.1"
   }
 }
